@@ -1,9 +1,26 @@
+@import url(normalize);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,300);
+
 body {
   overflow: hidden;
   margin: 0;
   padding: 0;
   height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18pt;
 }
+
+h1, h2, h3 {
+  font-family: 'Oswald', Impact, sans-serif;
+  font-weight: 400;
+}
+
+h1 {font-size: 5em; color: #1b323f;}
+h2 {font-size: 3em; color: #222; margin: 0;}
+h3 {font-size: 2em; color: #008774; margin: 0;}
+p, li {font-size: 1em; color: #666;}
+
 
 .slide {
   width: 100%;
