@@ -1,6 +1,7 @@
 @import url(normalize);
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,300);
+@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
 
 body {
   overflow: hidden;
@@ -46,5 +47,11 @@ p, li {font-size: 1em; color: #666;}
   right: 0;
   background-color: rgba(0, 0, 0, 0.75);
   color: white;
-  padding: 0.5em;
+  padding: 1em;
+}
+
+.footnote a {
+  font-size: 0.9em;
+  color: #50AB91;
+  text-decoration: none;
 }
