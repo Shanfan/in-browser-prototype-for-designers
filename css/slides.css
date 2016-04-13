@@ -3,6 +3,21 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,300);
 @import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
 
+/*--- Color Variables Helpers ----*/
+.txt-brand-color {color: #025A53;}
+.bg-brand-color {background-color: #025A53;}
+
+.txt-brand-dark {color: #083330;}
+.bg-brand-dark {background-color: #083330;}
+
+.txt-white {color: white;}
+.bg-white {background-color: white;}
+
+.txt-black {color: #222222;}
+.bg-black {color: #222222;}
+
+/*----------------------------------*/
+
 body {
   overflow: hidden;
   margin: 0;
@@ -15,12 +30,13 @@ body {
 h1, h2, h3 {
   font-family: 'Oswald', Impact, sans-serif;
   font-weight: 400;
+  line-height: 1.2;
 }
 
-h1 {font-size: 5em; color: #1b323f;}
-h2 {font-size: 3em; color: #222; margin: 0;}
-h3 {font-size: 2em; color: #008774; margin: 0;}
-p, li {font-size: 1em; color: #666;}
+h1 {font-size: 5em;}
+h2 {font-size: 3em;}
+h3 {font-size: 2em;}
+p, li {font-size: 1em;}
 
 
 .slide {
@@ -28,16 +44,19 @@ p, li {font-size: 1em; color: #666;}
   height: 100%;
   display: none;
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #f7f7f7;
 }
 
 .slide.active {
   display: block;
   overflow: auto;
+}
+
+.content {
+  padding: 60px;
 }
 
 .footnote {
