@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,300);
+@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
+@import "font-awesome";
+@import "colors";
+
+@mixin padding-viewport($size) {
+  top: $size;
+  bottom: $size;
+  left: $size;
+  right: $size;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18pt;
+}
+
+h1, h2, h3 {
+  font-family: 'Oswald', Impact, sans-serif;
+  font-weight: 400;
+  line-height: 1.15em;
+  margin: 0;
+}
+
+h1 {font-size: 5em;}
+h2 {font-size: 3em;}
+h3 {font-size: 2em;}
+p, li {font-size: 1em;}
+
+a {
+  color: lighten($brand-2, 5%);
+  text-decoration: none;
+  &:hover {
+    color: lighten($brand-2, 15%);
+    text-decoration: underline;
+  }
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.slide.active {
+  display: block;
+  overflow: auto;
+}
+
+.content {
+  position: absolute;
+}
+
+.footnote {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 1em;
+
+  a {
+    font-size: 0.9em;
+    color: #50AB91;
+    text-decoration: none;
+  }
+}
+
+// .delay {
+//   opacity: 0;
+// }
+
+//*---- Slide Specific ----*//
+#cover .content{
+  @include padding-viewport(20px);
+  padding: 50px;
+  text-align: center;
+  border: 10px solid $gray-1;
+  h1 {
+    margin-bottom: 1.5em;
+  }
+  h3 {
+    margin-bottom: 1.5em;
+  }
+  p {
+    color: $gray-4;
+  }
+}
+
+#prototyping .content{
+  @include padding-viewport(50px);
+}
+
+$img-woman-hand-desk-office: 'https://static.pexels.com/photos/6384/woman-hand-desk-office.jpg';
+$img-hand-drawing: 'https://static.pexels.com/photos/24407/pexels-photo-24407.jpg';
+$img-desk-office-pen-ruler: 'https://static.pexels.com/photos/2097/desk-office-pen-ruler.jpg';
+$img-iphone-books-desk: 'https://static.pexels.com/photos/232/apple-iphone-books-desk.jpg';
+$img-hand-icons: 'https://static.pexels.com/photos/17845/pexels-photo.jpg';
+$img-handcraft: 'https://static.pexels.com/photos/17823/pexels-photo.jpg';
+$img-carpenter-tools: 'https://static.pexels.com/photos/3327/construction-work-carpenter-tools.jpg';
+
+#guiding-principle {
+  background-color: $gray-2;
+  background-image: url($img-handcraft);
+  background-size: cover;
+  background-position: center; 
+  .content {
+    top: 10%;
+    bottom: 10%;
+    left: 20%;
+    right: 20%;
+    border: 20px solid white;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    color: white;
+  }
+}
+
+#thanks .content {
+  top: 10%;
+  bottom: 10%;
+  left: 20%;
+  right: 20%;
+  border: 20px solid $gray-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  div {
+    margin-top: 5em;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-around;
+    align-items: middle;
+  }
+}
+
+
+
