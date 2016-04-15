@@ -1,3 +1,4 @@
 .DS_Store
 /ignore
 /.sass-cache
+/node_modules
