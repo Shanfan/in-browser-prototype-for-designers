@@ -5,6 +5,17 @@ $(function(){
 
 });
 
+/*---- Key Code ----
+(space)       32
+page up       33
+page down     34
+left arrow    37
+up arrow      38
+right arrow   39
+down arrow    40
+enter         13
+---------------------*/
+
 $("body").keydown(function(e) {
 
   if (e.keyCode == 34 || e.keyCode == 40 || e.keyCode == 39) {
