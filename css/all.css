@@ -2239,20 +2239,19 @@ a {
     width: 50%;
     height: 50%;
     text-transform: uppercase;
-    font-size: 1.3em;
+    font-size: 2em;
     letter-spacing: 0.2em;
     display: flex;
     justify-content: center;
-    align-items: center;
-    text-align: center; }
+    align-items: center; }
   #fidelity .content .look-feel {
     background: #F3D12D; }
   #fidelity .content .transition-animation {
-    background: salmon; }
+    background: #6AA7BF; }
   #fidelity .content .content-data {
     background: #D23624; }
   #fidelity .content .journey-task {
-    background: #6AA7BF; }
+    background: salmon; }
 
 #thanks .content {
   top: 10%;
