@@ -1,8 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,300);
-@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
+//@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
 @import "font-awesome";
 @import "colors";
+@import "animation";
 
 @mixin padding-viewport($size) {
   top: $size;
@@ -95,17 +96,6 @@ a {
   }
 }
 
-// * --- Stock Images --- *//
-
-$img-woman-hand-desk-office: 'https://static.pexels.com/photos/6384/woman-hand-desk-office.jpg';
-$img-hand-drawing: 'https://static.pexels.com/photos/24407/pexels-photo-24407.jpg';
-$img-desk-office-pen-ruler: 'https://static.pexels.com/photos/2097/desk-office-pen-ruler.jpg';
-$img-iphone-books-desk: 'https://static.pexels.com/photos/232/apple-iphone-books-desk.jpg';
-$img-hand-icons: 'https://static.pexels.com/photos/17845/pexels-photo.jpg';
-$img-handcraft: 'https://static.pexels.com/photos/17823/pexels-photo.jpg';
-$img-carpenter-tools: 'https://static.pexels.com/photos/3327/construction-work-carpenter-tools.jpg';
-
-
 //*---- Slide Specific ----*//
 #cover .content{
   @include padding-viewport(2rem);
@@ -183,11 +173,11 @@ $img-carpenter-tools: 'https://static.pexels.com/photos/3327/construction-work-c
   }
   .left {
     background: $gray-7;
-    h3 {color: darken($pastel-blue, 5%);}
+    h3 {color: darken($blue, 5%);}
   }
   .right {
     background: $yellow;
-    h3 {color: $amber;}
+    h3 {color: $red;}
   }
 }
 
@@ -228,16 +218,81 @@ $img-carpenter-tools: 'https://static.pexels.com/photos/3327/construction-work-c
     text-align: center;
   }
   .look-feel {
-    background: $yellow;
+    background-color: rgba(255, 231, 99, 0.52);
+    &:after {
+      top: 0;
+      left: 0;
+      right: 50%;
+      bottom: 50%;
+      content: "";
+      background: url('../img/rauphlauren-romance-ad.jpg') no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.5;
+      position: absolute;
+      z-index: -1;
+    }
   }
   .transition-animation {
-    background: salmon;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:after {
+      top: 0;
+      left: 50%;
+      right: 0;
+      bottom: 50%;
+      content: "";
+      position: absolute;
+      background-color: $red;
+      z-index: -1;
+    }
+    .bounceSpinZ {
+      animation: bounceSpinZ 4s infinite;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+      transform-origin: calc(50% - 0.1em) 50%;
+    }
   }
-  .content-data {
-    background: $amber;
+  .data-content {
+    .background {
+      background: $purple;
+      top: 50%;
+      left: 0%;
+      right: 50%;
+      bottom: 0;
+      position: absolute;
+      z-index: -1;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+      .fa {
+        color: darken($purple, 10%);
+        font-size: 2rem;  
+        width: 25%;
+      }
+    }
   }
   .journey-task {
-     background: $pastel-blue;
+    .background {
+      top: 50%;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: -1;
+      background: $blue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .fa {
+        color: darken($blue, 10%);
+        font-size: 10rem;
+      }
+   }
   }
 }
 

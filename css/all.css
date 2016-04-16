@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,300);
-@import url(https://fonts.googleapis.com/css?family=Covered+By+Your+Grace);
 /*!
  *  Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -2049,6 +2048,23 @@
   overflow: visible;
   clip: auto; }
 
+@keyframes bounceSpinZ {
+  0% {
+    transform: rotate(0deg);
+    font-size: 1em; }
+  20% {
+    transform: rotate(0deg);
+    font-size: 1em; }
+  40% {
+    transform: rotate(225deg);
+    font-size: 10em; }
+  80% {
+    transform: rotate(225deg);
+    font-size: 10em; }
+  100% {
+    transform: rotate(0deg);
+    font-size: 1em; } }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -2203,9 +2219,9 @@ a {
     #purpose .content .left h3 {
       color: #589cb7; }
   #purpose .content .right {
-    background: #F3D12D; }
+    background: #FFE763; }
     #purpose .content .right h3 {
-      color: #D23624; }
+      color: #ED6E68; }
 
 #guiding-principle {
   background-color: #272929;
@@ -2239,19 +2255,76 @@ a {
     width: 50%;
     height: 50%;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1.3em;
     letter-spacing: 0.2em;
     display: flex;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    text-align: center; }
   #fidelity .content .look-feel {
-    background: #F3D12D; }
+    background-color: rgba(255, 231, 99, 0.52); }
+    #fidelity .content .look-feel:after {
+      top: 0;
+      left: 0;
+      right: 50%;
+      bottom: 50%;
+      content: "";
+      background: url("../img/rauphlauren-romance-ad.jpg") no-repeat;
+      background-position: center;
+      background-size: cover;
+      opacity: 0.5;
+      position: absolute;
+      z-index: -1; }
   #fidelity .content .transition-animation {
-    background: #6AA7BF; }
-  #fidelity .content .content-data {
-    background: #D23624; }
-  #fidelity .content .journey-task {
-    background: salmon; }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    #fidelity .content .transition-animation:after {
+      top: 0;
+      left: 50%;
+      right: 0;
+      bottom: 50%;
+      content: "";
+      position: absolute;
+      background-color: #ED6E68;
+      z-index: -1; }
+    #fidelity .content .transition-animation .bounceSpinZ {
+      animation: bounceSpinZ 4s infinite;
+      padding: 0;
+      margin: 0;
+      line-height: 1;
+      transform-origin: calc(50% - 0.1em) 50%; }
+  #fidelity .content .data-content .background {
+    background: #7853E8;
+    top: 50%;
+    left: 0%;
+    right: 50%;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center; }
+    #fidelity .content .data-content .background .fa {
+      color: #5526e2;
+      font-size: 2rem;
+      width: 25%; }
+  #fidelity .content .journey-task .background {
+    top: 50%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+    background: #6AA7BF;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    #fidelity .content .journey-task .background .fa {
+      color: #4a90ac;
+      font-size: 10rem; }
 
 #thanks .content {
   top: 10%;

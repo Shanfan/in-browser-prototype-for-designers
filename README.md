@@ -1,2 +1,2 @@
-# Prototyping For Designers
+# In-Browser Prototyping For Designers
 ## Presentation at UXPA 2016
