@@ -2065,11 +2065,45 @@
     transform: rotate(0deg);
     font-size: 1em; } }
 
-@keyframes collapseHeader {
-  0% {
-    height: 100%; }
-  100% {
-    height: 0; } }
+@keyframes slideDown {
+  from {
+    top: 0;
+    bottom: 0; }
+  to {
+    top: 100%;
+    bottom: 0; } }
+
+@keyframes slideUp {
+  from {
+    top: 0;
+    bottom: 0; }
+  to {
+    top: 0;
+    bottom: 100%; } }
+
+@keyframes slideRight {
+  from {
+    left: 0;
+    right: 0; }
+  to {
+    left: 100%;
+    right: 0; } }
+
+@keyframes slideLeft {
+  from {
+    left: 0;
+    right: 0; }
+  to {
+    left: 0;
+    right: 100%; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.1); }
+  to {
+    opacity: 100;
+    transform: scale(1); } }
 
 * {
   box-sizing: border-box;
@@ -2341,23 +2375,29 @@ a {
   flex-flow: row wrap; }
   #tools .content > div {
     width: 50%;
-    height: 50%; }
+    height: 50%;
+    position: relative; }
     #tools .content > div > div {
-      height: 100%;
-      animation: collapseHeader 0.5s forwards;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
       animation-timing-function: cubic-bezier(0.25, 0.39, 0.6, 1); }
     #tools .content > div.look-feel > div {
       background-color: #FFE763;
-      animation-delay: 0.5s; }
+      animation-name: slideRight; }
     #tools .content > div.journey-task > div {
       background-color: #6AA7BF;
-      animation-delay: 0.6s; }
+      animation-name: slideDown; }
     #tools .content > div.interaction-transition > div {
       background-color: #ED6E68;
-      animation-delay: 0.72s; }
+      animation-name: slideUp; }
     #tools .content > div.data-content > div {
       background-color: #7853E8;
-      animation-delay: 0.864s; }
+      animation-name: slideLeft; }
 
 #tools .tools-list {
   position: absolute;
@@ -2366,12 +2406,15 @@ a {
   right: 0;
   display: flex;
   align-items: flex-end;
-  justify-content: space-around; }
+  opacity: 0;
+  justify-content: space-around;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.5s; }
   #tools .tools-list > img {
-    height: 80px;
+    height: 60px;
     transition: all 0.3s; }
   #tools .tools-list > img:hover {
-    height: 200px;
+    height: 180px;
     cursor: pointer; }
 
 #thanks .content {

@@ -301,29 +301,31 @@ a {
     display: flex;
     flex-flow: row wrap;
     > div {
-      $delay: 0.5s;
       width: 50%;
       height: 50%;
+      position: relative;
       > div {
-        height: 100%;
-        animation: collapseHeader 0.5s forwards;
+        position: absolute;
+        @include padding-viewport(0);
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
         animation-timing-function: cubic-bezier(.25,.39,.6,1);
       }
       &.look-feel > div {
         background-color: $yellow;
-        animation-delay: $delay;
+        animation-name: slideRight;
       }
       &.journey-task > div {
         background-color: $blue;
-        animation-delay: $delay * 1.2;
+        animation-name: slideDown;
       }
       &.interaction-transition > div {
         background-color: $red;
-        animation-delay: $delay * 1.2 * 1.2;
+        animation-name: slideUp;
       }
       &.data-content > div {
         background-color: $purple;
-        animation-delay: $delay * 1.2 * 1.2 * 1.2;
+        animation-name: slideLeft;
       }
     }
   }
@@ -334,13 +336,16 @@ a {
     right: 0;
     display: flex;
     align-items: flex-end;
+    opacity: 0;
     justify-content: space-around;
+    animation: fadeIn 0.5s forwards;
+    animation-delay: 0.5s;
     > img {
-      height: 80px;
+      height: 60px;
       transition: all 0.3s;
     }
     > img:hover {
-      height: 200px;
+      height: 180px;
       cursor: pointer;
     }
   }
