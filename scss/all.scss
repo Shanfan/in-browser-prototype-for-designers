@@ -162,7 +162,7 @@ a {
 }
 
 #purpose .content{
-  @include padding-viewport(7rem);
+  @include padding-viewport(0);
   display: flex;
   > div {
     max-width: 50%;
@@ -233,23 +233,23 @@ a {
       z-index: -1;
     }
   }
-  .transition-animation {
+  .interaction-transition {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     &:after {
-      top: 0;
-      left: 50%;
-      right: 0;
-      bottom: 50%;
+      top: 50%;
+      left: 0%;
+      right: 50%;
+      bottom: 0;
       content: "";
       position: absolute;
       background-color: $red;
       z-index: -1;
     }
     .bounceSpinZ {
-      animation: bounceSpinZ 4s infinite;
+      animation: bounceSpinZ 4s infinite alternate;
       padding: 0;
       margin: 0;
       line-height: 1;
@@ -260,8 +260,8 @@ a {
     .background {
       background: $purple;
       top: 50%;
-      left: 0%;
-      right: 50%;
+      left: 50%;
+      right: 0%;
       bottom: 0;
       position: absolute;
       z-index: -1;
@@ -278,24 +278,73 @@ a {
   }
   .journey-task {
     .background {
-      top: 50%;
+      top: 0%;
       left: 50%;
       right: 0;
-      bottom: 0;
+      bottom: 50%;
       position: absolute;
       z-index: -1;
       background: $blue;
       display: flex;
       justify-content: center;
       align-items: center;
-      .fa {
-        color: darken($blue, 10%);
-        font-size: 10rem;
-      }
+      background-image: url(../img/workflow.svg);
+      background-position: center;
+      background-size: 70%;
    }
   }
 }
 
+#tools {
+  .content {
+    @include padding-viewport(0);
+    display: flex;
+    flex-flow: row wrap;
+    > div {
+      $delay: 0.5s;
+      width: 50%;
+      height: 50%;
+      > div {
+        height: 100%;
+        animation: collapseHeader 0.5s forwards;
+        animation-timing-function: cubic-bezier(.25,.39,.6,1);
+      }
+      &.look-feel > div {
+        background-color: $yellow;
+        animation-delay: $delay;
+      }
+      &.journey-task > div {
+        background-color: $blue;
+        animation-delay: $delay * 1.2;
+      }
+      &.interaction-transition > div {
+        background-color: $red;
+        animation-delay: $delay * 1.2 * 1.2;
+      }
+      &.data-content > div {
+        background-color: $purple;
+        animation-delay: $delay * 1.2 * 1.2 * 1.2;
+      }
+    }
+  }
+  .tools-list {
+    position: absolute;
+    bottom: 1em;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    > img {
+      height: 80px;
+      transition: all 0.3s;
+    }
+    > img:hover {
+      height: 200px;
+      cursor: pointer;
+    }
+  }
+}
 
 #thanks .content {
   top: 10%;
@@ -313,6 +362,10 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: middle;
+  }
+  p {
+    margin-top: 1em;
+    font-size: 1.5em;
   }
 }
 
