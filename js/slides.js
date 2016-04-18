@@ -1,6 +1,6 @@
 $(function(){  
   
-  //init();
+  init();
   showSlide();
 
 });
@@ -64,8 +64,6 @@ $.fn.extend({
 });
 
 // Tools Comparison
-
-
 $("#tools .tools-list img").each(function(){
   var graph = "g#graph-" + $(this).attr("id").slice(8);
   $(graph).data({"hidden": true});
