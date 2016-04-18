@@ -300,37 +300,10 @@ a {
 
 #tools {
   .content {
-    @include padding-viewport(0);
+    @include padding-viewport(30px);
     display: flex;
-    flex-flow: row wrap;
-    > div {
-      width: 50%;
-      height: 50%;
-      position: relative;
-      > div {
-        position: absolute;
-        @include padding-viewport(0);
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(.25,.39,.6,1);
-      }
-      &.look-feel > div {
-        background-color: $yellow;
-        animation-name: slideRight;
-      }
-      &.journey-task > div {
-        background-color: $blue;
-        animation-name: slideDown;
-      }
-      &.interaction-transition > div {
-        background-color: $red;
-        animation-name: slideUp;
-      }
-      &.data-content > div {
-        background-color: $purple;
-        animation-name: slideLeft;
-      }
-    }
+    justify-content: center;
+    align-items: center;
   }
   .tools-list {
     position: absolute;
@@ -340,11 +313,12 @@ a {
     display: flex;
     align-items: flex-end;
     opacity: 0;
-    justify-content: space-around;
+    justify-content: center;
     animation: fadeIn 0.5s forwards;
     animation-delay: 0.1s;
     > img {
       height: 60px;
+      margin: 10px;
       transition: all 0.3s;
     }
     > img:hover {
@@ -359,6 +333,10 @@ a {
       border: 2px solid $gray-5;
     }
   }
+}
+
+.codepen {
+  h2 {margin: 1.5rem;}
 }
 
 #thanks .content {
