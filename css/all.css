@@ -2444,10 +2444,8 @@ a {
     height: 180px;
     cursor: pointer; }
   #tools .tools-list > img.on {
-    height: 120px;
-    padding: 4px;
-    border-radius: 10px;
-    border: 2px solid #ccc; }
+    height: 180px;
+    border-radius: 10px; }
 
 .codepen h2 {
   margin: 1.5rem; }
