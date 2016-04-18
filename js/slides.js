@@ -62,3 +62,44 @@ $.fn.extend({
     .prev().attr({"data-hidden": false}).fadeIn();
   }
 });
+
+// Tools Comparison
+
+
+$("#tools .tools-list img").each(function(){
+  var graph = "g#graph-" + $(this).attr("id").slice(8);
+  $(graph).data({"hidden": true});
+  
+  $(this).click(function(){
+    if ($(graph).data("hidden")) {    
+      $(graph).animate({"opacity": 0.5});
+      $("g#graph-base").animate({"opacity": 0});
+      $(this).addClass("on");
+      $(graph).data({"hidden": false});
+    } else {
+      $(graph).animate({"opacity": 0});
+      $(this).removeClass("on");      
+      $(graph).data({"hidden": true});    
+    }
+  });
+
+  $(this).hover(function(){
+      $(graph).animate({"opacity": 1});
+      if ($("#tools .tools-list .on").length != 0) {
+        $("g#graph-base").animate({"opacity": 0});  
+      } else {
+        $("g#graph-base").animate({"opacity": 0.5});  
+      }
+      
+    }, function(){
+      if (!$(this).hasClass("on")){
+        $(graph).animate({"opacity": 0});  
+      } else {
+        $(graph).animate({"opacity": 0.5});
+      }    
+    });  
+});
+
+
+
+

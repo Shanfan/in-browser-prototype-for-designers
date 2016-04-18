@@ -2105,6 +2105,51 @@
     opacity: 100;
     transform: scale(1); } }
 
+svg#tools-rosechart {
+  width: 100%;
+  height: 100%;
+  max-height: 900px;
+  padding: 10px; }
+
+.cls-1 {
+  fill: #FFE763; }
+
+.cls-2 {
+  fill: #6AA7BF; }
+
+.cls-3 {
+  fill: #ED6E68; }
+
+.cls-4 {
+  fill: #7853E8; }
+
+#lables {
+  font-size: 24px;
+  fill: #333;
+  font-family: Roboto; }
+
+#axises {
+  fill: none;
+  stroke: #101517;
+  stroke-miterlimit: 10;
+  stroke-width: 2px; }
+
+#graph-base {
+  opacity: 1; }
+
+#graph-flash,
+#graph-photoshop,
+#graph-illustrator,
+#graph-premiere,
+#graph-omnigraffle,
+#graph-axure,
+#graph-sketch,
+#graph-invision,
+#graph-css3,
+#graph-html5,
+#graph-javascript {
+  opacity: 0; }
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -2242,25 +2287,31 @@ a {
   #calvin-hobbes .second {
     max-width: 60%; }
 
-#purpose .content {
+#purpose .content,
+#what-good .content {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex; }
-  #purpose .content > div {
-    max-width: 50%;
+  #purpose .content > div,
+  #what-good .content > div {
+    width: 50%;
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around; }
-  #purpose .content .left {
+  #purpose .content .left,
+  #what-good .content .left {
     background: #eee; }
-    #purpose .content .left h3 {
+    #purpose .content .left h3,
+    #what-good .content .left h3 {
       color: #589cb7; }
-  #purpose .content .right {
+  #purpose .content .right,
+  #what-good .content .right {
     background: #FFE763; }
-    #purpose .content .right h3 {
+    #purpose .content .right h3,
+    #what-good .content .right h3 {
       color: #ED6E68; }
 
 #guiding-principle {
@@ -2409,13 +2460,18 @@ a {
   opacity: 0;
   justify-content: space-around;
   animation: fadeIn 0.5s forwards;
-  animation-delay: 0.5s; }
+  animation-delay: 0.1s; }
   #tools .tools-list > img {
     height: 60px;
     transition: all 0.3s; }
   #tools .tools-list > img:hover {
     height: 180px;
     cursor: pointer; }
+  #tools .tools-list > img.on {
+    height: 120px;
+    padding: 4px;
+    border-radius: 10px;
+    border: 2px solid #ccc; }
 
 #thanks .content {
   top: 10%;
