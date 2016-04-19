@@ -2213,6 +2213,9 @@ a {
 .content {
   position: absolute; }
 
+.codepen h2 {
+  margin: 1.5rem; }
+
 .footnote {
   position: absolute;
   bottom: 0;
@@ -2224,11 +2227,6 @@ a {
   padding: 0.75em 1em;
   font-weight: 300;
   text-align: right; }
-  .footnote a {
-    color: #50AB91;
-    text-decoration: none; }
-    .footnote a :hover {
-      text-decoration: underline; }
 
 #cover .content {
   top: 2rem;
@@ -2446,8 +2444,20 @@ a {
     height: 180px;
     border-radius: 10px; }
 
-.codepen h2 {
-  margin: 1.5rem; }
+#closing {
+  background: url(../img/tools_and_us.jpg) no-repeat;
+  background-size: auto 60%;
+  background-position: center 5em; }
+  #closing .content {
+    top: 3em;
+    left: 3em;
+    right: 1em;
+    bottom: 2em; }
+    #closing .content img {
+      position: absolute;
+      width: 200px;
+      right: 0;
+      bottom: 1em; }
 
 #thanks .content {
   top: 10%;
