@@ -69,6 +69,9 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
+  .delay {
+    opacity: 0;
+  }
 }
 
 .content {
@@ -149,15 +152,10 @@ a {
 
 #calvin-hobbes {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-
-  .first {
-    max-width: 30%;
-    margin-right: 1rem;
-  }
-  .second {
-    max-width: 60%;
+  img {
+    max-width: 33%;
   }
 }
 

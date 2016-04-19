@@ -1,8 +1,5 @@
 $(function(){  
-  
   init();
-  showSlide();
-
 });
 
 /*---- Key Code ----
@@ -16,19 +13,6 @@ down arrow    40
 enter         13
 ---------------------*/
 
-$("body").keydown(function(e) {
-
-  if (e.keyCode == 34 || e.keyCode == 40 || e.keyCode == 39) {
-    
-    $(".slide[data-hidden='false']:not(:last-of-type)").nextSlide();
-    
-  } 
-  else if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 33) {
-    $(".slide[data-hidden='false']:not(:first-of-type)").prevSlide();
-  }
-
-});
-
 var init = function(){
   var count = 1;
   $(".slide").each(function(){
@@ -41,6 +25,29 @@ var init = function(){
   showSlide();
 
 };
+
+
+$("body").keydown(function(e) {
+  if (e.keyCode == 34 || e.keyCode == 40 || e.keyCode == 39) {    
+    
+    if ($(".slide[data-hidden='false'] .delay").length) {
+      
+      $(".slide[data-hidden='false'] .delay").first().animate({"opacity": 1}).removeClass("delay");
+    
+    } else {
+    
+      $(".slide[data-hidden='false']:not(:last-of-type)").nextSlide();
+
+    } 
+
+  } 
+  
+  if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 33) {
+    $(".slide[data-hidden='false']:not(:first-of-type)").prevSlide();
+  }
+
+});
+
 
 var showSlide = function(){
   $(".slide").each(function(){
@@ -97,7 +104,3 @@ $("#tools .tools-list img").each(function(){
       }    
     });  
 });
-
-
-
-
