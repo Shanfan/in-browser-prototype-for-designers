@@ -147,11 +147,18 @@ a {
 }
 
 #calvin-hobbes {
+  padding: 5em;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
-  img {
-    max-width: 33%;
+  .row{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $gray-4;
+    img {
+      max-width: 30%;
+    }
   }
 }
 
@@ -297,7 +304,7 @@ a {
     @include padding-viewport(30px);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
   }
   .tools-list {
     position: absolute;
@@ -321,8 +328,7 @@ a {
     }
 
     > img.on {
-      height: 180px;
-      border-radius: 10px;
+      height: 100px;
     }
   }
 }
@@ -332,16 +338,17 @@ a {
   background-size: auto 60%;
   background-position: center 5em;
   .content {
-    top: 3em;
-    left: 3em;
-    right: 1em;
-    bottom: 2em;
-    img {
-      position: absolute;
-      width: 200px;
-      right: 0;
-      bottom: 1em;
-    }
+    top: calc(7em + 60%);
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  img {
+    position: absolute;
+    width: 200px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
   }
 }
 

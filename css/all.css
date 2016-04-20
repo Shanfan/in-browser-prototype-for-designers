@@ -2277,11 +2277,17 @@ a {
       border-top: 1px solid #101517; }
 
 #calvin-hobbes {
+  padding: 5em;
   display: flex;
-  justify-content: space-around;
-  align-items: center; }
-  #calvin-hobbes img {
-    max-width: 33%; }
+  flex-direction: column;
+  justify-content: space-around; }
+  #calvin-hobbes .row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #666; }
+    #calvin-hobbes .row img {
+      max-width: 30%; }
 
 #purpose .content,
 #what-good .content {
@@ -2420,7 +2426,7 @@ a {
   right: 30px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: flex-start; }
 
 #tools .tools-list {
   position: absolute;
@@ -2441,23 +2447,23 @@ a {
     height: 180px;
     cursor: pointer; }
   #tools .tools-list > img.on {
-    height: 180px;
-    border-radius: 10px; }
+    height: 100px; }
 
 #closing {
   background: url(../img/tools_and_us.jpg) no-repeat;
   background-size: auto 60%;
   background-position: center 5em; }
   #closing .content {
-    top: 3em;
-    left: 3em;
-    right: 1em;
-    bottom: 2em; }
-    #closing .content img {
-      position: absolute;
-      width: 200px;
-      right: 0;
-      bottom: 1em; }
+    top: calc(7em + 60%);
+    left: 0;
+    right: 0;
+    text-align: center; }
+  #closing img {
+    position: absolute;
+    width: 200px;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%; }
 
 #thanks .content {
   top: 10%;
