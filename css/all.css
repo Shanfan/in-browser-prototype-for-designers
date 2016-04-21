@@ -2213,8 +2213,16 @@ a {
 .content {
   position: absolute; }
 
-.codepen h2 {
-  margin: 1.5rem; }
+.codepen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .codepen h2 {
+    margin: 1.5rem; }
 
 .footnote {
   position: absolute;
@@ -2253,28 +2261,14 @@ a {
   bottom: 3.6rem;
   left: 3.6rem;
   right: 3.6rem; }
-  #prototyping .content .big-dig {
+  #prototyping .content .img-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 2rem; }
-  #prototyping .content .image-wrapper {
-    position: relative;
-    width: 50%; }
-    #prototyping .content .image-wrapper img {
-      width: 100%; }
-    #prototyping .content .image-wrapper img + span {
-      position: absolute;
-      bottom: 5px;
-      display: block;
-      background: rgba(0, 0, 0, 0.75);
-      color: #eee;
-      font-size: 0.8rem;
-      margin: 0;
-      padding: 5px 10px;
-      width: 100%;
-      font-weight: 300;
-      border-top: 1px solid #101517; }
+    align-items: flex-start;
+    flex-flow: row wrap;
+    margin-top: 2rem;
+    width: 100%; }
+    #prototyping .content .img-wrapper img {
+      height: 280px; }
 
 #calvin-hobbes {
   padding: 5em;
