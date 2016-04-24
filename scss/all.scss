@@ -47,9 +47,8 @@ h1 + h2,
 h2 + h3,
 h3 + h3,
 h2 + p,
-h3 + p 
-{ margin-top: 1rem; 
-  color: $gray-3;
+h3 + p
+{ margin-top: 1rem;
 }
 
 a {
@@ -156,7 +155,7 @@ a {
   }
 }
 
-#purpose .content, 
+#purpose .content,
 #what-good .content {
   @include padding-viewport(0);
   display: flex;
@@ -168,14 +167,12 @@ a {
     justify-content: space-around;
   }
   .left {
-    background: $gray-7;
-    h3 {
-      color: darken($blue, 5%);
-    }
+    background: lighten($purple, 15%);
+    color: darken($purple, 15%);
   }
   .right {
     background: $yellow;
-    h3 {color: $red;}
+    color: darken($red, 15%);
   }
 }
 
@@ -183,7 +180,7 @@ a {
   background-color: $gray-2;
   background-image: url($img-handcraft);
   background-size: cover;
-  background-position: center; 
+  background-position: center;
   .content {
     top: 10rem;
     left: 10rem;
@@ -269,7 +266,7 @@ a {
       align-items: center;
       .fa {
         color: darken($purple, 10%);
-        font-size: 2rem;  
+        font-size: 2rem;
         width: 25%;
       }
     }
@@ -379,5 +376,5 @@ a {
 @media (max-width: 669px) {
   body {
     font-size: 14px;
-  } 
+  }
 }

@@ -2189,8 +2189,7 @@ h2 + h3,
 h3 + h3,
 h2 + p,
 h3 + p {
-  margin-top: 1rem;
-  color: #404547; }
+  margin-top: 1rem; }
 
 a {
   color: #04a598;
@@ -2299,16 +2298,12 @@ a {
     justify-content: space-around; }
   #purpose .content .left,
   #what-good .content .left {
-    background: #eee; }
-    #purpose .content .left h3,
-    #what-good .content .left h3 {
-      color: #589cb7; }
+    background: #ad96f1;
+    color: #491cd2; }
   #purpose .content .right,
   #what-good .content .right {
-    background: #FFE763; }
-    #purpose .content .right h3,
-    #what-good .content .right h3 {
-      color: #ED6E68; }
+    background: #FFE763;
+    color: #e52c24; }
 
 #guiding-principle {
   background-color: #272929;
