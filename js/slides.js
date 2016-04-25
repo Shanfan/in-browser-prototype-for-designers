@@ -1,5 +1,6 @@
-$(function(){  
-  init();
+$(function(){
+  //init();
+  showSlide();
 });
 
 /*---- Key Code ----
@@ -21,27 +22,27 @@ var init = function(){
   });
 
   $("#cover").attr({"data-hidden": false});
-  
+
   showSlide();
 
 };
 
 
 $("body").keydown(function(e) {
-  if (e.keyCode == 34 || e.keyCode == 40 || e.keyCode == 39) {    
-    
+  if (e.keyCode == 34 || e.keyCode == 40 || e.keyCode == 39) {
+
     if ($(".slide[data-hidden='false'] .delay").length) {
-      
+
       $(".slide[data-hidden='false'] .delay").first().animate({"opacity": 1}).removeClass("delay");
-    
+
     } else {
-    
+
       $(".slide[data-hidden='false']:not(:last-of-type)").nextSlide();
 
-    } 
+    }
 
-  } 
-  
+  }
+
   if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 33) {
     $(".slide[data-hidden='false']:not(:first-of-type)").prevSlide();
   }
@@ -59,7 +60,7 @@ var showSlide = function(){
   });
 };
 
-$.fn.extend({ 
+$.fn.extend({
   nextSlide: function() {
     this.attr({"data-hidden": true}).fadeOut()
     .next().attr({"data-hidden": false}).fadeIn();
@@ -74,33 +75,33 @@ $.fn.extend({
 $("#tools .tools-list img").each(function(){
   var graph = "g#graph-" + $(this).attr("id").slice(8);
   $(graph).data({"hidden": true});
-  
+
   $(this).click(function(){
-    if ($(graph).data("hidden")) {    
+    if ($(graph).data("hidden")) {
       $(graph).animate({"opacity": 0.5});
       $("g#graph-base").animate({"opacity": 0});
       $(this).addClass("on");
       $(graph).data({"hidden": false});
     } else {
       $(graph).animate({"opacity": 0});
-      $(this).removeClass("on");      
-      $(graph).data({"hidden": true});    
+      $(this).removeClass("on");
+      $(graph).data({"hidden": true});
     }
   });
 
   $(this).hover(function(){
       $(graph).animate({"opacity": 1});
       if ($("#tools .tools-list .on").length != 0) {
-        $("g#graph-base").animate({"opacity": 0});  
+        $("g#graph-base").animate({"opacity": 0});
       } else {
-        $("g#graph-base").animate({"opacity": 0.5});  
+        $("g#graph-base").animate({"opacity": 0.5});
       }
-      
+
     }, function(){
       if (!$(this).hasClass("on")){
-        $(graph).animate({"opacity": 0});  
+        $(graph).animate({"opacity": 0});
       } else {
         $(graph).animate({"opacity": 0.5});
-      }    
-    });  
+      }
+    });
 });

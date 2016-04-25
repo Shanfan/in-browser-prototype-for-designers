@@ -2052,18 +2052,9 @@
   0% {
     transform: rotate(0deg);
     font-size: 1em; }
-  20% {
-    transform: rotate(0deg);
-    font-size: 1em; }
-  40% {
-    transform: rotate(225deg);
-    font-size: 10em; }
-  80% {
-    transform: rotate(225deg);
-    font-size: 10em; }
   100% {
-    transform: rotate(0deg);
-    font-size: 1em; } }
+    transform: rotate(225deg);
+    font-size: 10em; } }
 
 @keyframes slideDown {
   from {
@@ -2267,64 +2258,116 @@ a {
     margin-top: 2rem;
     width: 100%; }
     #prototyping .content .img-wrapper img {
-      height: 280px; }
-
-#calvin-hobbes {
-  padding: 5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around; }
-  #calvin-hobbes .row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: #666; }
-    #calvin-hobbes .row img {
-      max-width: 30%; }
+      height: 25vh; }
 
 #purpose .content,
-#what-good .content {
+#what-good .content,
+#guiding-principle .content {
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   display: flex; }
   #purpose .content > div,
-  #what-good .content > div {
+  #what-good .content > div,
+  #guiding-principle .content > div {
     width: 50%;
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around; }
   #purpose .content .left,
-  #what-good .content .left {
+  #what-good .content .left,
+  #guiding-principle .content .left {
     background: #ad96f1;
     color: #491cd2; }
   #purpose .content .right,
-  #what-good .content .right {
+  #what-good .content .right,
+  #guiding-principle .content .right {
     background: #FFE763;
     color: #e52c24; }
 
-#guiding-principle {
-  background-color: #272929;
-  background-image: url("https://static.pexels.com/photos/17823/pexels-photo.jpg");
-  background-size: cover;
-  background-position: center; }
-  #guiding-principle .content {
-    top: 10rem;
-    left: 10rem;
-    border: 0.5rem solid white;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 2em;
-    color: white;
-    letter-spacing: 0.25rem;
-    text-transform: uppercase; }
-    #guiding-principle .content h2 {
-      font-size: 2.5rem;
-      line-height: 1.5em; }
+.fidelity-breakdown {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute; }
+  .fidelity-breakdown > div {
+    width: 100%;
+    height: 100%;
+    font-size: 3em; }
+    .fidelity-breakdown > div:after,
+    .fidelity-breakdown > div .background {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0; }
+
+.look-feel,
+.interaction-transition,
+.journey-task,
+.data-content {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.look-feel {
+  background-color: rgba(255, 231, 99, 0.52); }
+  .look-feel:after {
+    content: "";
+    background: url("../img/rauphlauren-romance-ad.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+    position: absolute;
+    z-index: -1; }
+
+.interaction-transition {
+  flex-direction: column; }
+  .interaction-transition:after {
+    content: "";
+    position: absolute;
+    background-color: #ED6E68;
+    z-index: -1; }
+  .interaction-transition .bounceSpinZ {
+    animation: bounceSpinZ 4s forwards;
+    animation-delay: 2s;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    transform-origin: calc(50% - 0.1em) 50%; }
+
+.data-content .background {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #7853E8;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center; }
+  .data-content .background .fa {
+    color: #5526e2;
+    font-size: 1em;
+    width: 25%; }
+
+.journey-task .background {
+  position: absolute;
+  z-index: -1;
+  background: #6AA7BF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/workflow.svg);
+  background-position: center;
+  background-size: 70%; }
 
 #fidelity .content {
   top: 0;
@@ -2336,77 +2379,27 @@ a {
   #fidelity .content > div {
     width: 50%;
     height: 50%;
-    text-transform: uppercase;
-    font-size: 1.3em;
-    letter-spacing: 0.2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center; }
-  #fidelity .content .look-feel {
-    background-color: rgba(255, 231, 99, 0.52); }
-    #fidelity .content .look-feel:after {
-      top: 0;
-      left: 0;
-      right: 50%;
-      bottom: 50%;
-      content: "";
-      background: url("../img/rauphlauren-romance-ad.jpg") no-repeat;
-      background-position: center;
-      background-size: cover;
-      opacity: 0.5;
-      position: absolute;
-      z-index: -1; }
-  #fidelity .content .interaction-transition {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    #fidelity .content .interaction-transition:after {
-      top: 50%;
-      left: 0%;
-      right: 50%;
-      bottom: 0;
-      content: "";
-      position: absolute;
-      background-color: #ED6E68;
-      z-index: -1; }
-    #fidelity .content .interaction-transition .bounceSpinZ {
-      animation: bounceSpinZ 4s infinite alternate;
-      padding: 0;
-      margin: 0;
-      line-height: 1;
-      transform-origin: calc(50% - 0.1em) 50%; }
+    font-size: 1.3em; }
+  #fidelity .content .look-feel:after {
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 50%; }
+  #fidelity .content .interaction-transition:after {
+    top: 50%;
+    left: 0%;
+    right: 50%;
+    bottom: 0; }
   #fidelity .content .data-content .background {
-    background: #7853E8;
     top: 50%;
     left: 50%;
     right: 0%;
-    bottom: 0;
-    position: absolute;
-    z-index: -1;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    align-items: center; }
-    #fidelity .content .data-content .background .fa {
-      color: #5526e2;
-      font-size: 2rem;
-      width: 25%; }
+    bottom: 0; }
   #fidelity .content .journey-task .background {
     top: 0%;
     left: 50%;
     right: 0;
-    bottom: 50%;
-    position: absolute;
-    z-index: -1;
-    background: #6AA7BF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../img/workflow.svg);
-    background-position: center;
-    background-size: 70%; }
+    bottom: 50%; }
 
 #tools .content {
   top: 30px;

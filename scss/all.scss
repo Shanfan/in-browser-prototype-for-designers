@@ -48,8 +48,7 @@ h2 + h3,
 h3 + h3,
 h2 + p,
 h3 + p
-{ margin-top: 1rem;
-}
+{ margin-top: 1rem;}
 
 a {
   color: lighten($brand-2, 15%);
@@ -128,35 +127,19 @@ a {
     display: flex;
     align-items: flex-start;
     flex-flow: row wrap;
-    //justify-content: space-between;
 
     margin-top: 2rem;
     width: 100%;
 
     img {
-      height: 280px;
-    }
-  }
-}
-
-#calvin-hobbes {
-  padding: 5em;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  .row{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: $gray-4;
-    img {
-      max-width: 30%;
+      height: 25vh;
     }
   }
 }
 
 #purpose .content,
-#what-good .content {
+#what-good .content,
+#guiding-principle .content {
   @include padding-viewport(0);
   display: flex;
   > div {
@@ -176,25 +159,90 @@ a {
   }
 }
 
-#guiding-principle {
-  background-color: $gray-2;
-  background-image: url($img-handcraft);
-  background-size: cover;
-  background-position: center;
-  .content {
-    top: 10rem;
-    left: 10rem;
-    border: 0.5rem solid white;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 2em;
-    color: white;
-    letter-spacing: 0.25rem;
-    text-transform: uppercase;
-    h2 {font-size: 2.5rem; line-height: 1.5em;}
+.fidelity-breakdown {
+  @include padding-viewport(0);
+  position: absolute;
+  > div {
+    width: 100%;
+    height: 100%;
+    font-size: 3em;
+    &:after,
+    .background {
+      @include padding-viewport(0);
+    }
   }
+}
+
+.look-feel,
+.interaction-transition,
+.journey-task,
+.data-content
+ {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.look-feel {
+  background-color: rgba(255, 231, 99, 0.52);
+  &:after {
+    content: "";
+    background: url('../img/rauphlauren-romance-ad.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.interaction-transition {
+  flex-direction: column;
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: $red;
+    z-index: -1;
+  }
+  .bounceSpinZ {
+    animation: bounceSpinZ 4s forwards;
+    animation-delay: 2s;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    transform-origin: calc(50% - 0.1em) 50%;
+  }
+}
+
+.data-content .background {
+  @include padding-viewport(0);
+  background: $purple;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  .fa {
+    color: darken($purple, 10%);
+    font-size: 1em;
+    width: 25%;
+  }
+}
+
+.journey-task .background {
+  position: absolute;
+  z-index: -1;
+  background: $blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../img/workflow.svg);
+  background-position: center;
+  background-size: 70%;
 }
 
 #fidelity .content{
@@ -204,89 +252,33 @@ a {
   > div {
     width: 50%;
     height: 50%;
-    text-transform: uppercase;
     font-size: 1.3em;
-    letter-spacing: 0.2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
-  .look-feel {
-    background-color: rgba(255, 231, 99, 0.52);
-    &:after {
-      top: 0;
-      left: 0;
-      right: 50%;
-      bottom: 50%;
-      content: "";
-      background: url('../img/rauphlauren-romance-ad.jpg') no-repeat;
-      background-position: center;
-      background-size: cover;
-      opacity: 0.5;
-      position: absolute;
-      z-index: -1;
-    }
+
+  .look-feel:after {
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 50%;
   }
-  .interaction-transition {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &:after {
+
+  .interaction-transition:after {
       top: 50%;
       left: 0%;
       right: 50%;
       bottom: 0;
-      content: "";
-      position: absolute;
-      background-color: $red;
-      z-index: -1;
-    }
-    .bounceSpinZ {
-      animation: bounceSpinZ 4s infinite alternate;
-      padding: 0;
-      margin: 0;
-      line-height: 1;
-      transform-origin: calc(50% - 0.1em) 50%;
-    }
   }
-  .data-content {
-    .background {
-      background: $purple;
-      top: 50%;
-      left: 50%;
-      right: 0%;
-      bottom: 0;
-      position: absolute;
-      z-index: -1;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
-      align-items: center;
-      .fa {
-        color: darken($purple, 10%);
-        font-size: 2rem;
-        width: 25%;
-      }
-    }
+  .data-content .background {
+    top: 50%;
+    left: 50%;
+    right: 0%;
+    bottom: 0;
   }
-  .journey-task {
-    .background {
+  .journey-task .background {
       top: 0%;
       left: 50%;
       right: 0;
       bottom: 50%;
-      position: absolute;
-      z-index: -1;
-      background: $blue;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-image: url(../img/workflow.svg);
-      background-position: center;
-      background-size: 70%;
-   }
   }
 }
 

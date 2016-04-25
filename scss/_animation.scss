@@ -3,21 +3,9 @@
     transform: rotate(0deg);
     font-size: 1em;
   }
-  20% {
-    transform: rotate(0deg);
-    font-size: 1em;
-  }
-  40% {
-    transform: rotate(225deg);
-    font-size: 10em;
-  }
-  80% {
-    transform: rotate(225deg);
-    font-size: 10em;
-  }
   100% {
-    transform: rotate(0deg);
-    font-size: 1em;
+    transform: rotate(225deg);
+    font-size: 10em;
   }
 }
 
@@ -41,7 +29,7 @@
     top: 0;
     bottom: 100%;
   }
-}  
+}
 
 @keyframes slideRight {
   from {
