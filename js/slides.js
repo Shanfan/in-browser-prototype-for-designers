@@ -78,13 +78,13 @@ $("#tools .tools-list img").each(function(){
 
   $(this).click(function(){
     if ($(graph).data("hidden")) {
+      $(this).addClass("on");
       $(graph).animate({"opacity": 0.5});
       $("g#graph-base").animate({"opacity": 0});
-      $(this).addClass("on");
       $(graph).data({"hidden": false});
     } else {
-      $(graph).animate({"opacity": 0});
       $(this).removeClass("on");
+      $(graph).animate({"opacity": 0});
       $(graph).data({"hidden": true});
     }
   });

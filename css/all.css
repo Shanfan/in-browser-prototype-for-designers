@@ -2111,7 +2111,7 @@ svg#tools-rosechart {
   fill: #ED6E68; }
 
 .cls-4 {
-  fill: #7853E8; }
+  fill: #7f42d4; }
 
 #lables {
   font-size: 24px;
@@ -2189,6 +2189,12 @@ a {
     color: #05d7c6;
     text-decoration: underline; }
 
+table {
+  width: 50%;
+  margin-top: 1em; }
+  table th {
+    text-align: left; }
+
 .slide {
   width: 100%;
   height: 100%;
@@ -2200,19 +2206,33 @@ a {
   .slide .delay {
     opacity: 0; }
 
-.content {
-  position: absolute; }
-
-.codepen {
+.slide.punchline {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0; }
-  .codepen h2 {
-    margin: 1.5rem; }
+  flex-direction: column; }
+  .slide.punchline:not(.scroll) * {
+    max-width: 70vw; }
+  .slide.punchline p {
+    font-size: 2.5em; }
+  .slide.punchline.scroll {
+    justify-content: flex-start;
+    background-color: #272929;
+    overflow-y: scroll; }
+
+.content {
+  position: absolute; }
+
+.gray {
+  color: #666666; }
+
+.bg-purple {
+  background: #a980e2;
+  color: #5a25a4; }
+
+.bg-yellow {
+  background: #FFE763;
+  color: #e52c24; }
 
 .footnote {
   position: absolute;
@@ -2225,67 +2245,6 @@ a {
   padding: 0.75em 1em;
   font-weight: 300;
   text-align: right; }
-
-#cover .content {
-  top: 2rem;
-  bottom: 2rem;
-  left: 2rem;
-  right: 2rem;
-  padding: 3rem;
-  text-align: center;
-  border: 10px solid #101517; }
-  #cover .content img {
-    max-height: 35%; }
-  #cover .content h1 {
-    margin-bottom: 3rem; }
-  #cover .content h3 {
-    margin-bottom: 2rem; }
-  #cover .content p {
-    position: absolute;
-    width: 100%;
-    bottom: 3rem;
-    color: #666; }
-
-#prototyping .content {
-  top: 3.6rem;
-  bottom: 3.6rem;
-  left: 3.6rem;
-  right: 3.6rem; }
-  #prototyping .content .img-wrapper {
-    display: flex;
-    align-items: flex-start;
-    flex-flow: row wrap;
-    margin-top: 2rem;
-    width: 100%; }
-    #prototyping .content .img-wrapper img {
-      height: 25vh; }
-
-#purpose .content,
-#what-good .content,
-#guiding-principle .content {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex; }
-  #purpose .content > div,
-  #what-good .content > div,
-  #guiding-principle .content > div {
-    width: 50%;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; }
-  #purpose .content .left,
-  #what-good .content .left,
-  #guiding-principle .content .left {
-    background: #ad96f1;
-    color: #491cd2; }
-  #purpose .content .right,
-  #what-good .content .right,
-  #guiding-principle .content .right {
-    background: #FFE763;
-    color: #e52c24; }
 
 .fidelity-breakdown {
   top: 0;
@@ -2346,7 +2305,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #7853E8;
+  background: #7f42d4;
   position: absolute;
   z-index: -1;
   display: flex;
@@ -2354,7 +2313,7 @@ a {
   justify-content: space-around;
   align-items: center; }
   .data-content .background .fa {
-    color: #5526e2;
+    color: #662ab9;
     font-size: 1em;
     width: 25%; }
 
@@ -2368,6 +2327,72 @@ a {
   background-image: url(../img/workflow.svg);
   background-position: center;
   background-size: 70%; }
+
+.tools-list {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.1s; }
+  .tools-list > img {
+    height: 60px;
+    margin: 10px;
+    transition: all 0.3s; }
+  .tools-list > img:hover {
+    height: 180px;
+    cursor: pointer; }
+  .tools-list > img.on {
+    height: 100px; }
+
+#cover .content {
+  top: 2rem;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  padding: 3rem;
+  text-align: center; }
+  #cover .content img {
+    max-height: 35%; }
+  #cover .content h1 {
+    margin-bottom: 3rem; }
+  #cover .content h3 {
+    margin-bottom: 2rem; }
+  #cover .content p {
+    position: absolute;
+    width: 100%;
+    bottom: 3rem;
+    color: #666666; }
+
+#prototyping {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-flow: row wrap;
+  background: #101517; }
+  #prototyping img {
+    height: 25vh;
+    margin: 2em 1em 1em 2em; }
+
+#purpose .content,
+#what-good .content,
+#guiding-principle .content {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex; }
+  #purpose .content > div,
+  #what-good .content > div,
+  #guiding-principle .content > div {
+    width: 50%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
 
 #fidelity .content {
   top: 0;
@@ -2414,29 +2439,20 @@ a {
   position: absolute;
   bottom: 1em;
   left: 0;
-  right: 0;
-  display: flex;
-  align-items: flex-end;
-  opacity: 0;
-  justify-content: center;
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 0.1s; }
-  #tools .tools-list > img {
-    height: 60px;
-    margin: 10px;
-    transition: all 0.3s; }
-  #tools .tools-list > img:hover {
-    height: 180px;
-    cursor: pointer; }
-  #tools .tools-list > img.on {
-    height: 100px; }
+  right: 0; }
+
+#sketch-screenshot #sketch-logo {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 4em; }
 
 #closing {
   background: url(../img/tools_and_us.jpg) no-repeat;
-  background-size: auto 60%;
-  background-position: center 5em; }
+  background-size: auto 50%;
+  background-position: center 3em; }
   #closing .content {
-    top: calc(7em + 60%);
+    top: calc(5em + 50%);
     left: 0;
     right: 0;
     text-align: center; }
@@ -2448,24 +2464,17 @@ a {
     border-radius: 50%; }
 
 #thanks .content {
-  top: 10%;
-  bottom: 10%;
-  left: 20%;
-  right: 20%;
-  border: 20px solid #101517;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center; }
   #thanks .content div {
-    margin-top: 5em;
     font-size: 2em;
     display: flex;
-    justify-content: space-around;
-    align-items: middle; }
-  #thanks .content p {
-    margin-top: 1em;
-    font-size: 1.5em; }
+    justify-content: center;
+    align-items: center; }
+    #thanks .content div a {
+      margin: 0.5em; }
 
 @media (max-width: 1900px) and (min-width: 670px) {
   body {
