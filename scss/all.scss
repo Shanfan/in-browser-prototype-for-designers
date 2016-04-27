@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,400italic,300);
-@import "font-awesome";
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
 @import "colors";
 @import "animation";
 @import "svg";
@@ -129,7 +129,6 @@ table {
   text-align: right;
 }
 
-
 .fidelity-breakdown {
   @include padding-viewport(0);
   position: absolute;
@@ -257,6 +256,7 @@ table {
     width: 100%;
     bottom: 3rem;
     color: $gray-4;
+    font-size: 1rem;
   }
 }
 
@@ -340,6 +340,16 @@ table {
   }
 }
 
+#live-coding {
+  background: $gray-2;
+  img {
+    width: 400px;
+    transform: rotate(6deg);
+    border: 10px solid white;
+    box-shadow: 3px 5px 20px black;
+  }
+}
+
 #sketch-screenshot #sketch-logo{
   position: fixed;
   bottom: 1em;
@@ -366,22 +376,9 @@ table {
   }
 }
 
-#thanks .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  div {
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    a {
-      margin: 0.5em;
-    }
-  }
+#thanks a {
+  margin-top: 20vh;
 }
-
 
 //* --- Media Query ---*//
 @media (max-width: 1900px) and (min-width: 670px) {
