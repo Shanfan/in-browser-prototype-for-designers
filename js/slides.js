@@ -33,7 +33,9 @@ $("body").keydown(function(e) {
 
     if ($(".slide[data-hidden='false'] .delay").length) {
 
-      $(".slide[data-hidden='false'] .delay").first().animate({"opacity": 1}).removeClass("delay");
+      $(".slide[data-hidden='false'] .delay").first().animate({"opacity": 1}, 300, function(){
+        $(this).removeClass("delay");
+      });
 
     } else {
 
