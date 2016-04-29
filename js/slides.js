@@ -1,6 +1,5 @@
 $(function(){
-  //init();
-  showSlide();
+  init();
 });
 
 /*---- Key Code ----
