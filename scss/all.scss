@@ -97,8 +97,11 @@ small { font-size: 0.65em; }
   &.scroll {
     justify-content: flex-start;
     background-color: $gray-2;
-    overflow-y: scroll;
   }
+}
+
+.scroll {
+  overflow-y: scroll;  
 }
 
 .content {

@@ -274,8 +274,10 @@ small {
     font-size: 2.5em; }
   .punchline.scroll {
     justify-content: flex-start;
-    background-color: #272929;
-    overflow-y: scroll; }
+    background-color: #272929; }
+
+.scroll {
+  overflow-y: scroll; }
 
 .content {
   position: absolute; }
