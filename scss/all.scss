@@ -133,13 +133,18 @@ small { font-size: 0.65em; }
   > div:last-child {
     padding: 2em 2em 2em 1em;
   }
-  pre {
-    width: 100%;
+  pre, img {
     height: 80vh;
+    margin-top: 1em;
   }
 }
+
 .gray {
   color: $gray-4;
+}
+
+.bg-dark {
+  background-color: $gray-2;
 }
 
 .bg-purple {
@@ -326,10 +331,10 @@ small { font-size: 0.65em; }
   }
 
   .interaction-transition:after {
-      top: 50%;
-      left: 0%;
-      right: 50%;
-      bottom: 0;
+    top: 50%;
+    left: 0%;
+    right: 50%;
+    bottom: 0;
   }
   .data-content .background {
     top: 50%;
@@ -338,10 +343,10 @@ small { font-size: 0.65em; }
     bottom: 0;
   }
   .journey-task .background {
-      top: 0%;
-      left: 50%;
-      right: 0;
-      bottom: 50%;
+    top: 0%;
+    left: 50%;
+    right: 0;
+    bottom: 50%;
   }
 }
 
