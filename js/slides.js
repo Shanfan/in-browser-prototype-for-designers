@@ -12,63 +12,18 @@ right arrow   39
 down arrow    40
 enter         13
 ---------------------*/
-
-var init = function(){
-  var count = 0;
-  $(".slide").each(function(){
-    $(this).attr({"data-id": count, "data-hidden": true});
-    count++;
-  });
-
-  $(".slide[data-id = 0]").attr({"data-hidden": false});
-
-  showSlide();
-
-};
-
-
 $("body").keydown(function(e) {
   if (e.keyCode == 34 || e.keyCode == 40 || e.keyCode == 39) {
-
     if ($(".slide[data-hidden='false'] .delay").length) {
-
       $(".slide[data-hidden='false'] .delay").first().animate({"opacity": 1}, 300, function(){
         $(this).removeClass("delay");
       });
-
     } else {
-
       $(".slide[data-hidden='false']:not(:last-of-type)").nextSlide();
-
     }
-
   }
-
   if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 33) {
     $(".slide[data-hidden='false']:not(:first-of-type)").prevSlide();
-  }
-
-});
-
-
-var showSlide = function(){
-  $(".slide").each(function(){
-    if ($(this).data("hidden") == false) {
-      $(this).show();
-    } else {
-      $(this).hide();
-    }
-  });
-};
-
-$.fn.extend({
-  nextSlide: function() {
-    this.attr({"data-hidden": true}).fadeOut()
-    .next().attr({"data-hidden": false}).fadeIn();
-  },
-  prevSlide: function() {
-    this.attr({"data-hidden": true}).fadeOut()
-    .prev().attr({"data-hidden": false}).fadeIn();
   }
 });
 
@@ -105,4 +60,75 @@ $("#tools .tools-list img").each(function(){
         $(graph).animate({"opacity": 0.5});
       }
     });
+});
+
+var init = function(){
+  var count = 0;
+  $(".slide").each(function(){
+    $(this).attr({"data-id": count, "data-hidden": true});
+    count++;
+  });
+  $(".slide[data-id = 0]").attr({"data-hidden": false});
+
+  buildNav();
+  showSlide();
+  showProgress();
+};
+
+var showSlide = function(){
+  $(".slide").each(function(){
+    if ($(this).data("hidden") == false) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+};
+
+var buildNav = function(){
+  var slides = $(".slide");
+  $("body").append("<nav></nav>");
+
+  for (i=0; i < slides.length; i++) {
+    $("nav").append("<div class='nav-" + i + "'></div>");
+  }
+
+  // Go to a selected slide
+  $("nav div").each(function(){
+    $(this).click(function(){
+      var clickedID = $(this).removeClass("active").attr("class").slice(4),
+          slideToShow = $(".slide[data-id="+ clickedID +"]"),
+          currentSlide = $(".slide[data-hidden='false']");
+
+      currentSlide.attr({"data-hidden": true}).fadeOut();
+      slideToShow.attr({"data-hidden": false}).fadeIn();
+
+      console.log(slideToShow);
+
+      showProgress();
+    });
+  });
+
+}
+
+var showProgress = function(){
+  $("nav").children().removeClass("active");
+  var activeID = $(".slide[data-hidden = 'false']").data("id");
+  console.log(activeID);
+  for (i=0; i<= activeID; i++){
+    $(".nav-" + i).addClass("active");
+  }
+}
+
+$.fn.extend({
+  nextSlide: function() {
+    this.attr({"data-hidden": true}).fadeOut()
+    .next().attr({"data-hidden": false}).fadeIn();
+    showProgress();
+  },
+  prevSlide: function() {
+    this.attr({"data-hidden": true}).fadeOut()
+    .prev().attr({"data-hidden": false}).fadeIn();
+    showProgress();
+  }
 });
