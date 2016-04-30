@@ -27,9 +27,10 @@ gulp
 
 ----
 ### Acknowledgement
-Thanks to friends and colleagues:  
+Friends and colleagues who helped me reviewing the presentation:  
 [Gideon Goldin](https://github.com/gideongoldin)  
 [Dan Berlin](https://twitter.com/banderlin)  
 [Mariesa Dale](http://mariesa.me/)   
 Peter Huynh  
+Jon Ericson
 Melody and Shaina Karasin from Women Who code
