@@ -101,7 +101,7 @@ small { font-size: 0.65em; }
 }
 
 .scroll {
-  overflow-y: scroll;  
+  overflow-y: scroll;
 }
 
 .content {
@@ -282,9 +282,12 @@ small { font-size: 0.65em; }
 }
 
 //*---- Slide Specific ----*//
+#web {
+  p {margin-top: 0.65em;}
+}
+
 #cover .content{
   @include padding-viewport(2rem);
-  padding: 3rem;
   text-align: center;
   img {
     max-height: 35%;

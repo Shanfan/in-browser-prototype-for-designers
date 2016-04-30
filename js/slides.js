@@ -14,13 +14,13 @@ enter         13
 ---------------------*/
 
 var init = function(){
-  var count = 1;
+  var count = 0;
   $(".slide").each(function(){
     $(this).attr({"data-id": count, "data-hidden": true});
     count++;
   });
 
-  $("#cover").attr({"data-hidden": false});
+  $(".slide[data-id = 0]").attr({"data-hidden": false});
 
   showSlide();
 
